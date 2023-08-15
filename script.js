@@ -48,3 +48,19 @@ function disableButtons() {
 document.getElementById('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
 document.getElementById('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
 document.getElementById('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    enableButtons();
+    document.getElementById('result').textContent = '';
+    document.getElementById('score').textContent = '';
+}
+
+function enableButtons() {
+    document.getElementById('rock').disabled = false;
+    document.getElementById('paper').disabled = false;
+    document.getElementById('scissors').disabled = false;
+}
+
+document.getElementById('restart').addEventListener('click', resetGame);
